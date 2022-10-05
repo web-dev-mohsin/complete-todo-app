@@ -1,7 +1,12 @@
 import React from 'react';
 import './Todo.css'
 const Todo = (props) => {
-    const {title, description} = props.todo
+    const {title, description} = props.todo;
+    const {id} = props; 
+
+    const handleDelete = (id)=>{
+        props.onRemoveTodo(id)
+    }
     return (
         <div className='todo'>
             <div>
@@ -9,7 +14,7 @@ const Todo = (props) => {
             <p>{description}</p>
             </div>
              
-            <button>
+            <button onClick={()=>{handleDelete(id)}}>
             <i class="fa-solid fa-trash"></i>
             </button>
            

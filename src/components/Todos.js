@@ -8,7 +8,7 @@ const Todos = (props) => {
         <div className='todos'>
             <section>
                 {
-                   props.todos.map((todo) => <Todo key={todo.id} todo={todo}></Todo>) 
+                   todos.map((todo) => <Todo onRemoveTodo={props.onRemoveTodo} key={todo.id} id={todo.id} todo={todo.todo}></Todo>) 
                 }
             </section>
         </div>
